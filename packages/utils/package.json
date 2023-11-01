@@ -1,0 +1,53 @@
+{
+  "name": "@docker-awesome/utils",
+  "version": "0.2.0",
+  "description": "javascript utils.",
+  "keywords": [
+    "javascript",
+    "utils",
+    "currency",
+    "storage",
+    "qs",
+    "dayjs"
+  ],
+  "homepage": "https://github.com/docker-awesome",
+  "bugs": {
+    "url": "https://github.com/docker-awesome/docker-awesome/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docker-awesome/docker-awesome.git"
+  },
+  "license": "MIT",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "scripts": {
+    "build": "father doctor && father build",
+    "dev": "father dev"
+  },
+  "dependencies": {
+    "currency.js": "^2.0.4",
+    "dayjs": "^1.11.10",
+    "js-base64": "^3.7.5",
+    "lodash-es": "^4.17.21",
+    "qs": "^6.11.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.10",
+    "@types/qs": "^6.9.8",
+    "@types/uuid": "^9.0.6"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "authors": [
+    "docker.cpu@qq.com"
+  ],
+  "gitHead": "888d673480e52e7432b0e02fcb161c456206afa7"
+}

@@ -1,0 +1,100 @@
+{
+  "name": "docker-awesome-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "package: docker-awesome's docs.",
+  "keywords": [
+    "@docker-awesome",
+    "@docker-awesome/storage",
+    "@docker-awesome/currency"
+  ],
+  "homepage": "https://github.com/docker-awesome",
+  "bugs": {
+    "url": "https://github.com/docker-awesome/docker-awesome/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docker-awesome/docker-awesome.git"
+  },
+  "license": "MIT",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "father build",
+    "build:packages": "lerna run build",
+    "build:watch": "father dev",
+    "dev": "dumi dev",
+    "docs:build": "dumi build",
+    "doctor": "father doctor",
+    "lint": "npm run lint:es && npm run lint:css",
+    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
+    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "package": "yarn --registry=https://registry.npmmirror.com",
+    "prepare": "husky install && dumi setup",
+    "prepublishOnly": "father doctor && npm run build",
+    "release": "npm run build:packages && lerna publish",
+    "start": "npm run build:packages && npm run dev",
+    "watch:components": "lerna watch -- npm run build:packages --scope=@docker-awesome/components",
+    "watch:utils": "lerna watch -- npm run build:packages --scope=@docker-awesome/utils"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/runtime": "^7.22.15",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@umijs/lint": "^4.0.0",
+    "dumi": "^2.2.10",
+    "eslint": "^8.23.0",
+    "father": "^4.2.3",
+    "husky": "^8.0.1",
+    "lerna": "^7.2.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "stylelint": "^14.9.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "authors": [
+    "docker.cpu@qq.com"
+  ]
+}
