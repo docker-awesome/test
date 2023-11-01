@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocker_awesome_docs=self.webpackChunkdocker_awesome_docs||[]).push([[9],{65149:function(v,o,e){e.r(o),e.d(o,{default:function(){return s}});var n=e(27544),d=e(67294),r=function(){var t=(0,n.UO)(),m=t.id,u=(0,n.WF)(),c=u.demos,f=c[m]||{},a=f.component;return a&&(0,d.createElement)(a)},s=r}}]);
