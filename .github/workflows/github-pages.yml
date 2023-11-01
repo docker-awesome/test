@@ -35,7 +35,7 @@ jobs:
       - name: Install Dependencies
         run: npx yarn
       - name: Build Docs
-        run: npx yarn build
+        run: npx yarn docs:build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       # - name: Build with Jekyll
